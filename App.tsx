@@ -1,32 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
-import AppLoading from 'expo-app-loading';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './app/screens/HomeScreen';
+import * as SplashScreen from 'expo-splash-screen';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
     const [fontsLoaded, setFontsLoaded] = useState(false);
 
+    SplashScreen.preventAutoHideAsync(); // Prevent auto-hiding splash screen
+
     // Asynchronously load fonts
     async function loadFonts() {
         await Font.loadAsync({
             'Poppins': require('./app/assets/fonts/Poppins-Regular.ttf'),
-            // 'Poppins-Medium': require('./app/assets/fonts/Poppins-Medium.ttf'),
-            // 'Poppins-Bold': require('./app/assets/fonts/Poppins-Bold.ttf'),
-            // 'Poppins-Italic': require('./app/assets/fonts/Poppins-Italic.ttf'),
+            // Additional fonts can be loaded here
         });
     }
 
     // Load fonts when the component mounts
     useEffect(() => {
-        loadFonts().then(() => setFontsLoaded(true));
+        loadFonts().then(() => {
+            setFontsLoaded(true);
+            SplashScreen.hideAsync(); // Hide splash screen once fonts are loaded
+        });
     }, []);
 
     if (!fontsLoaded) {
-        return <AppLoading />;
+        return null; // Return null while fonts are loading
     }
 
     return (

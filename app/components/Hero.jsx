@@ -19,28 +19,29 @@ const Hero = (props) => {
     };
 
     return (
-        <StyledView className="min-h-screen flex flex-col items-center justify-center px-5 bg-gray-900">
+        <StyledView className="flex flex-col items-center justify-center pb-3 px-5 bg-gray-600">
             <StatusBar barStyle="light-content" backgroundColor="transparent" />
-            <Text className="text-white text-center font-poppins text-[34px] font-bold leading-[110%] mt-10 flex-wrap">
+            <Text className="text-white text-center font-poppins text-[34px] font-bold leading-[110%] mt-5 flex-wrap">
                 Your Cloud, Our Expertise - Navigate, Innovate, Thrive
             </Text>
-            <Text className="w-full text-gray-200 text-center font-inter text-base font-normal mt-7 flex-wrap">
+            <Text className="flex-row flex-wrap text-gray-200 text-center font-inter text-base font-normal mt-7 pb-2 ">
                 Begin your journey with Cloud Mate - the compass for your cloud strategy.
             </Text>
+            <StyledView className="w-[80%] flex-row flex-wrap justify-center pb-2">
             <StyledTextInput
                 placeholder="Enter your email address"
                 placeholderTextColor="#9ca3af"
                 value={email}
                 onChangeText={handleEmailChange}
-                className="w-full flex-auto flex-wrap text-white mt-12 px-4 py-3 rounded-full border border-gray-700 bg-gray-800 bg-opacity-50"
+        className="w-full flex-row flex-center bg-white mt-2  px-4 py-3 rounded-full"
             />
-            <StyledView className="flex flex-wrap justify-center">
+        
                 <StyledTouchableOpacity
                     onPress={handleSubmit}
                     accessibilityLabel="Embark Now"
-                    className="w-full bg-cyan-700 mt-2 px-4 py-3 rounded-full"
+        className="w-full flex-row flex-center bg-cyan-700 mt-2 px-4 py-3 rounded-full"
                 >
-                    <Text className="text-white text-base font-black text-center">Embark Now</Text>
+                    <Text className="flex-row flex-center text-white text-base font-black text-center">Embark Now</Text>
                 </StyledTouchableOpacity>
             </StyledView>
         </StyledView>

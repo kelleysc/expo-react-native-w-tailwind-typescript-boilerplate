@@ -1,22 +1,26 @@
+// HomeScreen.jsx
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 import { styled } from 'nativewind';
 import NavBar from '../components/navbar/NavBarSplash';
 import Hero from '../components/Hero';
+import ServiceComparisonChart from '../components/ServiceComparisonChart';
+
 
 const StyledSafeArea = styled(SafeAreaView);
-const StyledText = styled(Text);
+const StyledScrollView = styled(ScrollView);
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
-    <StyledSafeArea className='flex bg-[#fff] items-center justify-center'>
-      <NavBar />
-      <Hero />
-      <StyledText className='text-red-600 text-4xl text-center p-5'>Expo With TypeScript and Tailwind CSS</StyledText>
-      {/* More content here */}
+    <StyledSafeArea className='bg-gray-100'>
+      <StyledScrollView className="pt-5">
+        <NavBar navigation={navigation} />
+        <Hero />
+        <ServiceComparisonChart />
+        {/* Additional content */}
+      </StyledScrollView>
     </StyledSafeArea>
   );
 };
 
 export default HomeScreen;
-
