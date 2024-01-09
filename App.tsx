@@ -2,8 +2,17 @@ import React, { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './app/screens/HomeScreen';
 import * as SplashScreen from 'expo-splash-screen';
+
+import HomeScreen from './app/screens/HomeScreen';
+import DashboardOverview from './app/screens/DashboardOverview';
+import CloudServicesManagement from './app/screens/CloudServicesManagement';
+import AnalyticsAndReporting from './app/screens/AnalyticsAndReporting';
+import AlertsAndNotifications from './app/screens/AlertsAndNotifications';
+import CostManagementAndOptimization from './app/screens/CostManagementAndOptimization';
+import SecurityAndCompliance from './app/screens/SecurityAndCompliance';
+import UserAndAccessManagement from './app/screens/UserAndAccessManagement';
+import SettingsAndIntegration from './app/screens/SettingsAndIntegration';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,7 +52,14 @@ const App = () => {
                         headerShown: true
                     }}
                 />
-                {/* Add other screens here */}
+                <Stack.Screen name="DashboardOverview" component={DashboardOverview} />
+                <Stack.Screen name="CloudServicesManagement" component={CloudServicesManagement} />
+                <Stack.Screen name="AnalyticsAndReporting" component={AnalyticsAndReporting} />
+                <Stack.Screen name="AlertsAndNotifications" component={AlertsAndNotifications} />
+                <Stack.Screen name="CostManagementAndOptimization" component={CostManagementAndOptimization} />
+                <Stack.Screen name="SecurityAndCompliance" component={SecurityAndCompliance} />
+                <Stack.Screen name="UserAndAccessManagement" component={UserAndAccessManagement} />
+                <Stack.Screen name="SettingsAndIntegration" component={SettingsAndIntegration} />
             </Stack.Navigator>
         </NavigationContainer>
     );
