@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StatusBar } from 'react-native';
 import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as SplashScreen from 'expo-splash-screen';
-
+import { styled } from 'nativewind';
 import HomeScreen from './app/screens/HomeScreen';
 import DashboardOverview from './app/screens/DashboardOverview';
 import CloudServicesManagement from './app/screens/CloudServicesManagement';
@@ -15,6 +16,7 @@ import UserAndAccessManagement from './app/screens/UserAndAccessManagement';
 import SettingsAndIntegration from './app/screens/SettingsAndIntegration';
 
 const Stack = createNativeStackNavigator();
+const StyledView = styled(View);
 
 const App = () => {
     const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -42,6 +44,7 @@ const App = () => {
     }
 
     return (
+    <StyledView className="flex-1 bg-gray-800">
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen
@@ -49,7 +52,7 @@ const App = () => {
                     component={HomeScreen}
                     options={{
                         headerTitle: 'CloudMate',
-                        headerShown: true
+                        headerShown: false
                     }}
                 />
                 <Stack.Screen name="DashboardOverview" component={DashboardOverview} />
@@ -62,6 +65,7 @@ const App = () => {
                 <Stack.Screen name="SettingsAndIntegration" component={SettingsAndIntegration} />
             </Stack.Navigator>
         </NavigationContainer>
+    </StyledView>
     );
 };
 

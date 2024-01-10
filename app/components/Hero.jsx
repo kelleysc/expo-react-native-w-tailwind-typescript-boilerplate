@@ -6,7 +6,7 @@ const StyledView = styled(View);
 const StyledTextInput = styled(TextInput);
 const StyledTouchableOpacity = styled(TouchableOpacity);
 
-const Hero = (props) => {
+const Hero = () => {
     const [email, setEmail] = useState('');
 
     const handleEmailChange = (text) => {
@@ -15,33 +15,32 @@ const Hero = (props) => {
 
     const handleSubmit = () => {
         console.log('Email submitted:', email);
-        // TODO: Implement your actual submission logic here (e.g., send email, navigate to a new screen)
+        // Implement your actual submission logic here
     };
 
     return (
-        <StyledView className="flex flex-col items-center justify-center pb-3 px-5 bg-gray-600">
+        <StyledView className="flex flex-col items-center justify-center px-5 bg-gray-800">
             <StatusBar barStyle="light-content" backgroundColor="transparent" />
-            <Text className="text-white text-center font-poppins text-[34px] font-bold leading-[110%] mt-5 flex-wrap">
+            <Text className="text-blue-800 text-center font-poppins text-[34px] font-bold leading-[110%] mt-5">
                 Your Cloud, Our Expertise - Navigate, Innovate, Thrive
             </Text>
-            <Text className="flex-row flex-wrap text-gray-200 text-center font-inter text-base font-normal mt-7 pb-2 ">
+            <Text className="text-gray-200 text-center font-inter text-base mt-7 pb-2">
                 Begin your journey with Cloud Mate - the compass for your cloud strategy.
             </Text>
-            <StyledView className="w-[80%] flex-row flex-wrap justify-center pb-2">
-            <StyledTextInput
-                placeholder="Enter your email address"
-                placeholderTextColor="#9ca3af"
-                value={email}
-                onChangeText={handleEmailChange}
-        className="w-full flex-row flex-center bg-white mt-2  px-4 py-3 rounded-full"
-            />
-        
+            <StyledView className="w-[80%] justify-center pb-2">
+                <StyledTextInput
+                    placeholder="Enter your email address"
+                    placeholderTextColor="#9ca3af"
+                    value={email}
+                    onChangeText={handleEmailChange}
+                    className="bg-white mt-2 px-4 py-3 rounded-full text-lg w-full"
+                />
                 <StyledTouchableOpacity
                     onPress={handleSubmit}
-                    accessibilityLabel="Embark Now"
-        className="w-full flex-row flex-center bg-cyan-700 mt-2 px-4 py-3 rounded-full"
+                    accessibilityLabel="Try for Free"
+                    className="bg-cyan-700 mt-2 px-4 py-3 w-full rounded-full"
                 >
-                    <Text className="flex-row flex-center text-white text-base font-black text-center">Embark Now</Text>
+                    <Text className="text-white font-bold text-lg text-center">Try for Free</Text>
                 </StyledTouchableOpacity>
             </StyledView>
         </StyledView>

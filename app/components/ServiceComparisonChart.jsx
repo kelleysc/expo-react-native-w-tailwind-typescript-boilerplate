@@ -1,17 +1,18 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import { styled } from 'nativewind';
-
-// Mock imports for the logos - replace these with actual paths or URLs
-const ec2Logo = require('../assets/images/CloudMateLogo.svg');
-const gcpLogo = require('../assets/images/CloudMateLogo.svg');
-const azureStorageLogo = require('../assets/images/CloudMateLogo.svg');
-const awsNetworkingLogo = require('../assets/images/CloudMateLogo.svg');
-const azureAILogo = require('../assets/images/CloudMateLogo.svg');
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
-const StyledImage = styled(Image);
+const StyledIcon = styled(MaterialCommunityIcons);
+
+// Define logos using icons
+const ec2Logo = "cloud";
+const gcpLogo = "google-cloud";
+const azureStorageLogo = "database";
+const awsNetworkingLogo = "network";
+const azureAILogo = "robot";
 
 const services = [
     { name: 'EC2', metric: '0.40%/100%', price: 'USD 0.029/hr', logo: ec2Logo },
@@ -23,11 +24,13 @@ const services = [
 
 const ServiceItem = ({ name, metric, price, logo }) => {
     return (
-        <StyledView className="flex-row items-center bg-basedark-transparent p-3 rounded-lg mb-3">
-            <StyledImage source={logo} style={{ width: 24, height: 24, marginRight: 8 }} />
-            <StyledView className="flex-1">
-                <StyledText className="text-white font-bold">{name}</StyledText>
-                <StyledText className="text-accent">{metric}</StyledText>
+        <StyledView className="flex-row items-center mb-4">
+            <StyledView className="rounded-full bg-blue-900 p-3 mr-4 justify-center items-center">
+                <StyledIcon name={logo} size={32} color="#4F8EF7" />
+            </StyledView>
+            <StyledView className="flex-1 bg-white rounded-lg p-3 shadow-md">
+                <StyledText className="text-xl font-bold text-gray-800">{name}</StyledText>
+                <StyledText className="text-gray-600">{metric}</StyledText>
             </StyledView>
             <StyledText className="text-green-400">{price}</StyledText>
         </StyledView>
@@ -36,7 +39,7 @@ const ServiceItem = ({ name, metric, price, logo }) => {
 
 const ServiceComparisonChart = () => {
     return (
-        <StyledView className="m-4 p-4 bg-darkblue-900 rounded-lg shadow-lg bg-gray-600">
+        <StyledView className="m-4 p-4 bg-gray-800 rounded-lg shadow-lg">
             {services.map((service, index) => (
                 <ServiceItem
                     key={index}
