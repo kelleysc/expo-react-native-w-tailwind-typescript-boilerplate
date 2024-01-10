@@ -14,6 +14,7 @@ import CostManagementAndOptimization from './app/screens/CostManagementAndOptimi
 import SecurityAndCompliance from './app/screens/SecurityAndCompliance';
 import UserAndAccessManagement from './app/screens/UserAndAccessManagement';
 import SettingsAndIntegration from './app/screens/SettingsAndIntegration';
+import LoginScreen from './app/screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 const StyledView = styled(View);
@@ -63,6 +64,7 @@ const App = () => {
                 <Stack.Screen name="SecurityAndCompliance" component={SecurityAndCompliance} />
                 <Stack.Screen name="UserAndAccessManagement" component={UserAndAccessManagement} />
                 <Stack.Screen name="SettingsAndIntegration" component={SettingsAndIntegration} />
+                <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}}/>
             </Stack.Navigator>
         </NavigationContainer>
     </StyledView>
