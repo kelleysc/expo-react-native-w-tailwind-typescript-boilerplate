@@ -1,12 +1,15 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { Video } from 'expo-av';
+import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { styled } from 'nativewind';
-import VideoHomeScreen from './VideoHomeScreen';
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
 const StyledTouchableOpacity = styled(TouchableOpacity);
+
+const videoSource = require('../../assets/videos/HomeScreenCloudMate.mp4');
+
 
 const MobileStore = () => {
     return (
@@ -14,13 +17,20 @@ const MobileStore = () => {
             <StyledText className="text-white text-center text-3xl font-bold my-5">
                 Optimize Your Cloud Operations Anywhere.
             </StyledText>
-            <StyledText className="text-gray-200 text-center text-sm my-3">
+            <StyledText className="text-gray-400 text-center text-sm my-3">
                 A robust cloud management platform at your fingertips. Manage, monitor,
                 and secure your cloud infrastructure on the move.
             </StyledText>
-
-            <VideoHomeScreen /> {/* Here is your imported video component */}
-
+            <View style={{ borderRadius: 20, overflow: 'hidden', width: '100%', height: 200, marginVertical: 10 }}>
+                <Video
+                    source={videoSource}
+                    resizeMode="contain"
+                    style={{ width: '100%', height: '100%' }}
+                    shouldPlay
+                    isLooping
+                    isMuted
+                />
+            </View>
             <StyledText className="text-white text-center text-sm my-3">
                 Get the CloudMate Management App Now!
             </StyledText>

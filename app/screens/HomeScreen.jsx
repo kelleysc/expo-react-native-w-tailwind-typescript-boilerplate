@@ -10,6 +10,7 @@ import CoreValuesComponent from '../components/CoreValuesSection';
 import ImpactStatisticsComponent from '../components/ImpactStatisticsComponent';
 import FeaturedInMediaComponent from '../components/FeaturedInMediaComponent';
 
+
 const StyledSafeArea = styled(SafeAreaView);
 const StyledScrollView = styled(ScrollView);
 
