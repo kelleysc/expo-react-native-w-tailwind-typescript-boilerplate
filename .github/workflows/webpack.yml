@@ -1,0 +1,67 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: 
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |
+        npm install
+        npx webpack
+
+        name: Expo React Native CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      # Checks out your repository under $GITHUB_WORKSPACE
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: [14.x, 16.x, 18.x] # You can choose the Node.js version that matches your development environment
+
+    - name: Install Dependencies
+      run: npm install
+      # Installs npm dependencies
+
+    - name: Run Tests
+      run: npm test
+      # Replace this with your test script. 
+      # If you don't have tests, you can remove this step
+
+    - name: Expo Publish
+      run: |
+        npm install -g expo-cli
+        expo login -u ${{ secrets.EXPO_CLI_USERNAME }} -p ${{ secrets.EXPO_CLI_PASSWORD }}
+        expo publish
+      # This will publish your project to Expo. 
+      # Make sure to set EXPO_CLI_USERNAME and EXPO_CLI_PASSWORD as secrets in your GitHub repository settings.
+
