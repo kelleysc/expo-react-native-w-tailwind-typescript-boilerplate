@@ -10,9 +10,9 @@ const StyledText = styled(Text);
 const { width: viewportWidth } = Dimensions.get('window');
 
 const mediaLogos = [
-    { title: 'Instagram', iconName: 'instagram' },
-    { title: 'Facebook', iconName: 'facebook-f' },
-    { title: 'LinkedIn', iconName: 'linkedin-in' },
+    { title: 'Instagram', iconName: 'instagram', color: '#E1306C' },
+    { title: 'Facebook', iconName: 'facebook-f', color: '#3b5998' },
+    { title: 'LinkedIn', iconName: 'linkedin-in', color: '#0077B5' },
     // Add any other media you want to include
 ];
 
@@ -21,16 +21,16 @@ const FeaturedInMediaComponent = () => {
     const carouselRef = useRef(null);
 
     const renderItem = ({ item }) => (
-        <StyledView className="items-center justify-center p-4">
-            <FontAwesome5 name={item.iconName} size={48} color="#fff" />
+        <StyledView className="items-center justify-center w-full p-6 bg-darkblue-900 rounded-lg">
+            <FontAwesome5 name={item.iconName} size={36} color={item.color} />
             <StyledText className="text-white mt-2">{item.title}</StyledText>
         </StyledView>
     );
 
     return (
-        <StyledView className="flex flex-col items-stretch px-5 bg-darkblue-900">
-            <StyledView className="text-white text-center text-3xl font-bold leading-8 self-center w-full mt-5">
-                <StyledText>Featured In.</StyledText>
+        <StyledView className="flex flex-col items-stretch px-5 my-5 bg-[#0f172a]">
+            <StyledView className="mb-4">
+                <StyledText className="text-2xl text-white text-center font-bold">Featured In.</StyledText>
             </StyledView>
             <Carousel
                 ref={carouselRef}
@@ -45,10 +45,10 @@ const FeaturedInMediaComponent = () => {
                 activeDotIndex={activeSlide}
                 containerStyle={{ backgroundColor: 'transparent', paddingTop: 10 }}
                 dotStyle={{
-                    width: 10,
-                    height: 10,
-                    borderRadius: 5,
-                    marginHorizontal: 8,
+                    width: 8,
+                    height: 8,
+                    borderRadius: 4,
+                    marginHorizontal: 6,
                     backgroundColor: 'rgba(255, 255, 255, 0.92)'
                 }}
                 inactiveDotStyle={{
