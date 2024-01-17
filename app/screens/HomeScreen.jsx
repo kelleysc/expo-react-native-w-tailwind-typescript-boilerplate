@@ -9,14 +9,14 @@ import FeaturesSection from '../components/FeaturesSection';
 import CoreValuesComponent from '../components/CoreValuesSection';
 import ImpactStatisticsComponent from '../components/ImpactStatisticsComponent';
 import FeaturedInMediaComponent from '../components/FeaturedInMediaComponent';
-
+import Footer from '../components/Footer';
 
 const StyledSafeArea = styled(SafeAreaView);
 const StyledScrollView = styled(ScrollView);
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <StyledSafeArea className='bg-gray-100'>
+    <StyledSafeArea className='bg-gray-700'>
       <StyledScrollView className="pt-5">
         <NavBar navigation={navigation} />
         <Hero />
@@ -25,6 +25,7 @@ const HomeScreen = ({ navigation }) => {
         <CoreValuesComponent />
         <ImpactStatisticsComponent />
         <FeaturedInMediaComponent />
+        <Footer />
         {/* Additional content */}
       </StyledScrollView>
     </StyledSafeArea>
