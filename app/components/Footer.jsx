@@ -9,67 +9,67 @@ const StyledTouchableOpacity = styled(TouchableOpacity);
 
 const Footer = () => {
     return (
-        <StyledView className="flex flex-row justify-between items-center p-4 bg-gray-800">
-            <StyledView className="flex flex-row items-center">
-                {/* Logo */}
+        <StyledView className="flex flex-col items-center p-4 bg-gray-800">
+            {/* Logo and Company Name */}
+            <StyledView className="flex flex-row items-center mb-4">
                 <Icon name="cloud" size={24} color="blue" />
-                {/* Company Name */}
                 <StyledText className="text-blue-500 text-lg font-bold ml-2">
-                    <StyledText className="text-white">CloudMate</StyledText>
-                    <StyledText className="text-blue-500">.</StyledText>
+                    CloudMate<Text className="text-white">.</Text>
                 </StyledText>
             </StyledView>
             {/* Empower your cloud journey */}
-            <StyledText className="py-2 text-white text-base leading-7 whitespace-nowrap">
+            <StyledText className="text-white text-base leading-7 mb-4">
                 Empower your cloud journey
             </StyledText>
             {/* Social Media Icons */}
-            <StyledView className="flex flex-row justify-between w-1/3 items-stretch">
-                <StyledTouchableOpacity onPress={() => console.log('Social Media 1 pressed')}>
+            <StyledView className="flex flex-row justify-around w-full mb-6">
+                <StyledTouchableOpacity onPress={() => console.log('LinkedIn pressed')}>
                     <Icon name="linkedin" size={24} color="#0077B5" />
                 </StyledTouchableOpacity>
-                <StyledTouchableOpacity onPress={() => console.log('Social Media 2 pressed')}>
+                <StyledTouchableOpacity onPress={() => console.log('Facebook pressed')}>
                     <Icon name="facebook-f" size={24} color="#3b5998" />
                 </StyledTouchableOpacity>
-                <StyledTouchableOpacity onPress={() => console.log('Social Media 3 pressed')}>
+                <StyledTouchableOpacity onPress={() => console.log('Twitter pressed')}>
                     <Icon name="twitter" size={24} color="#1DA1F2" />
                 </StyledTouchableOpacity>
             </StyledView>
             {/* Quick Links */}
-            <StyledView className="items-stretch flex flex-row justify-between gap-5 mt-7 pr-20">
-                <StyledView className="items-stretch flex basis-[0%] flex-col pr-16">
-                    <StyledText className="text-slate-400 text-sm leading-6">Dashboards</StyledText>
-                    <StyledText className="text-slate-400 text-sm leading-6 mt-4">Contact</StyledText>
-                    <StyledText className="text-slate-400 text-sm leading-6 mt-4">Resources</StyledText>
+            <StyledView className="flex flex-row justify-around w-full mb-6">
+                {/* First Column */}
+                <StyledView>
+                    <StyledText className="text-slate-400 text-sm">Dashboards</StyledText>
+                    <StyledText className="text-slate-400 text-sm mt-2">Contact</StyledText>
+                    <StyledText className="text-slate-400 text-sm mt-2">Resources</StyledText>
                 </StyledView>
-                <StyledView className="items-stretch flex basis-[0%] flex-col self-start">
-                    <StyledText className="text-slate-400 text-sm leading-6 whitespace-nowrap">Account</StyledText>
-                    <StyledText className="text-slate-400 text-sm leading-6 whitespace-nowrap mt-4">Company</StyledText>
+                {/* Second Column */}
+                <StyledView>
+                    <StyledText className="text-slate-400 text-sm">Account</StyledText>
+                    <StyledText className="text-slate-400 text-sm mt-2">Company</StyledText>
                 </StyledView>
             </StyledView>
             {/* Stay in the Cloud Loop */}
-            <StyledView className="text-white text-center text-base font-bold leading-5 w-full mt-11">
-                <StyledText>Stay in the Cloud Loop.</StyledText>
-            </StyledView>
+            <StyledText className="text-white text-lg font-bold mb-4">
+                Stay in the Cloud Loop.
+            </StyledText>
             {/* CTA with Email Button */}
-            <StyledView className="flex w-full flex-col mt-6 pl-5">
-                <StyledText className="text-slate-400 text-sm leading-6 self-stretch">
+            <StyledView className="flex flex-col items-center w-full mb-4">
+                <StyledText className="text-slate-400 text-sm text-center mb-2">
                     Subscribe to receive updates on our services and insights into cloud strategies.
                 </StyledText>
-                <StyledView className="items-center border border-[color:var(--Base-Grey-80,#34384C)] bg-slate-800 bg-opacity-50 self-stretch flex justify-between gap-2.5 mt-5 pl-6 pr-2 py-2 rounded-[100px] border-solid">
-                    <StyledText className="text-slate-500 text-sm leading-6 grow whitespace-nowrap my-auto">
+                <StyledView className="flex flex-row items-center border border-gray-700 bg-slate-800 rounded-full px-4 py-2 mb-2">
+                    <StyledText className="text-slate-500 text-sm grow">
                         Enter your email address
                     </StyledText>
-                    <StyledTouchableOpacity className="text-white text-sm font-black leading-6 whitespace-nowrap justify-center items-stretch bg-cyan-700 self-stretch aspect-[1.7692307692307692] px-4 py-2 rounded-[40px]">
-                        <StyledText>Send</StyledText>
+                    <StyledTouchableOpacity className="bg-blue-600 px-3 py-1 rounded-full">
+                        <StyledText className="text-white text-sm">Send</StyledText>
                     </StyledTouchableOpacity>
                 </StyledView>
-                <StyledView className="bg-gray-700 self-stretch shrink-0 h-px mt-10" />
-                <StyledView className="items-stretch self-center flex justify-between gap-5 ml-2.5 mt-4">
-                    <StyledText className="text-slate-500 text-right text-sm leading-6 flex-1">
+                {/* Terms and Privacy Policy */}
+                <StyledView className="flex flex-row w-full justify-around">
+                    <StyledText className="text-slate-500 text-sm">
                         Term of Service
                     </StyledText>
-                    <StyledText className="text-slate-500 text-right text-sm leading-6">
+                    <StyledText className="text-slate-500 text-sm">
                         Privacy Policy
                     </StyledText>
                 </StyledView>
