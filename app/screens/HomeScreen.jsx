@@ -11,6 +11,7 @@ import ImpactStatisticsComponent from '../components/ImpactStatisticsComponent';
 import FeaturedInMediaComponent from '../components/FeaturedInMediaComponent';
 import Footer from '../components/Footer';
 import CloudOperationsAd from '../components/CloudOperationsAd';
+import SpecialOfferCTA from '../components/SpecialOfferCTA';
 
 const StyledSafeArea = styled(SafeAreaView);
 const StyledScrollView = styled(ScrollView);
@@ -27,6 +28,7 @@ const HomeScreen = ({ navigation }) => {
         <ImpactStatisticsComponent />
         <FeaturedInMediaComponent />
         <CloudOperationsAd />
+        <SpecialOfferCTA />
         <Footer />
         {/* Additional content */}
       </StyledScrollView>
