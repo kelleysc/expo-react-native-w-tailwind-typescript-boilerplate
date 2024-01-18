@@ -21,9 +21,9 @@ const FeaturedInMediaComponent = () => {
     const carouselRef = useRef(null);
 
     const renderItem = ({ item }) => (
-        <StyledView className="items-center justify-center w-full p-6 bg-darkblue-900 rounded-lg">
-            <FontAwesome5 name={item.iconName} size={36} color={item.color} />
-            <StyledText className="text-white mt-2">{item.title}</StyledText>
+        <StyledView className="flex items-center justify-center w-full p-6 bg-darkblue-900 rounded-lg">
+            <FontAwesome5 name={item.iconName} size={36} color={item.color} style={{ alignSelf: 'center' }} />
+            <StyledText className="text-white mt-2 text-center">{item.title}</StyledText>
         </StyledView>
     );
 

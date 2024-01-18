@@ -10,6 +10,7 @@ import CoreValuesComponent from '../components/CoreValuesSection';
 import ImpactStatisticsComponent from '../components/ImpactStatisticsComponent';
 import FeaturedInMediaComponent from '../components/FeaturedInMediaComponent';
 import Footer from '../components/Footer';
+import CloudOperationsAd from '../components/CloudOperationsAd';
 
 const StyledSafeArea = styled(SafeAreaView);
 const StyledScrollView = styled(ScrollView);
@@ -25,6 +26,7 @@ const HomeScreen = ({ navigation }) => {
         <CoreValuesComponent />
         <ImpactStatisticsComponent />
         <FeaturedInMediaComponent />
+        <CloudOperationsAd />
         <Footer />
         {/* Additional content */}
       </StyledScrollView>
