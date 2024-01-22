@@ -2,7 +2,7 @@
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
 import { styled } from 'nativewind';
-import NavBar from '../components/navbar/NavBarSplash';
+import NavBar from '../components/navbar/NavBarLoggedIn';
 import Hero from '../components/Hero';
 import ServiceComparisonChart from '../components/ServiceComparisonChart';
 import FeaturesSection from '../components/FeaturesSection';

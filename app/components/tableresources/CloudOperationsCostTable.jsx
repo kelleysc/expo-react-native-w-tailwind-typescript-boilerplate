@@ -17,7 +17,6 @@ const CLOUD_OPERATIONS_DATA = [
         quantity: 2000,
         totalCost: 'USD 100.00'
     },
-    // ... more mock data objects like the ones above
 ];
 
 const CLOUD_OPERATIONS_COLUMNS = [

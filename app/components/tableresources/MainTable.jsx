@@ -42,7 +42,6 @@ const MainTable = ({ fetchData }) => {
 
     return (
         <StyledView className="w-full h-full bg-neutral-800 rounded-xl">
-            {/* Header with title, dropdown, and sort/filter buttons */}
             <View className="flex-row items-center justify-between p-4">
                 <Text className="text-lg font-bold">{activeTable}</Text>
                 <TouchableOpacity onPress={() => handleTableChange('resourceUsage')}>
@@ -61,7 +60,6 @@ const MainTable = ({ fetchData }) => {
                     <Text>Filter by AWS</Text>
                 </TouchableOpacity>
             </View>
-            {/* Table */}
             {activeTable === 'resourceUsage' && <ResourceUsageTable columns={RESOURCE_USAGE_COLUMNS} data={data} />}
             {activeTable === 'serviceCosts' && <ServiceCostsTable columns={SERVICE_COSTS_COLUMNS} data={data} />}
             {activeTable === 'cloudOperationsCosts' && <CloudOperationsCostTable columns={CLOUD_OPERATIONS_COLUMNS} data={data} />}
