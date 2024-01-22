@@ -13,10 +13,12 @@ import { SafeAreaView, ScrollView, Text, View } from 'react-native';
 import { styled } from 'nativewind';
 import NavBarSplash from '../components/navbar/NavBarSplash';
 import UniversalTable from '../components/tableresources/UniversalTable'; 
+import UsageGraph from '../components/tableresources/UsageGraph';
 
 const StyledSafeArea = styled(SafeAreaView);
 const StyledScrollView = styled(ScrollView);
 const StyledView = styled(View);
+const StyledText = styled(Text);
 
 const mockCloudServiceData = [
     { id: 1, provider: 'AWS', service: 'EC2 Instances', currentSpend: 'USD 1,200.00', projectedSpend: 'USD 2,400.00', mtdSpend: 'USD 1,100.00', costVariation: '+2%' },
@@ -45,12 +47,15 @@ const DashboardOverview = ({ navigation }) => {
     return (
         <StyledSafeArea className='bg-[#1E1F25] min-h-full'>
             <NavBarSplash />
+            <StyledText className="text-white text-2xl font-bold text-center pt-5">Cloud Overview</StyledText>
             <StyledScrollView className="pt-5">
                 <UniversalTable
                     data={mockCloudServiceData}
                     columns={cloudServiceColumns}
-                />
+                />  
+                <UsageGraph />  
             </StyledScrollView>
+          
         </StyledSafeArea>
     );
 };
