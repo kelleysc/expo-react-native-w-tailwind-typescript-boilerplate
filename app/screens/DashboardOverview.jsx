@@ -14,6 +14,7 @@ import { styled } from 'nativewind';
 import NavBarSplash from '../components/navbar/NavBarSplash';
 import UniversalTable from '../components/tableresources/UniversalTable'; 
 import UsageGraph from '../components/tableresources/UsageGraph';
+import CloudMateAccessManagementDashboard from '../components/CloudMateAccessManagementDashboard';
 
 const StyledSafeArea = styled(SafeAreaView);
 const StyledScrollView = styled(ScrollView);
@@ -54,6 +55,7 @@ const DashboardOverview = ({ navigation }) => {
                     columns={cloudServiceColumns}
                 />  
                 <UsageGraph />  
+                <CloudMateAccessManagementDashboard />
             </StyledScrollView>
           
         </StyledSafeArea>
